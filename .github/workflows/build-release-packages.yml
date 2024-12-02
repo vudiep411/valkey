@@ -21,7 +21,7 @@ permissions:
   contents: read
 
 jobs:
-  # This job provides the version metadata from the tag for the other jobs to use.
+  # This job provides the version metadata from the tag for the other jobs to use. 
   release-build-get-meta:
     name: Get metadata to build
     runs-on: ubuntu-latest
