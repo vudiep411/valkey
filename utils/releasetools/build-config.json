@@ -29,12 +29,6 @@
           "target": "ubuntu20.04",
           "type": "deb",
           "platform": "focal"
-        },
-        {
-          "arch": "arm64",
-          "target": "ubuntu24.04",
-          "type": "deb",
-          "platform": "noble"
         }
       ]
 }
