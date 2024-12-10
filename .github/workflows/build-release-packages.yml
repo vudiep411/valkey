@@ -80,7 +80,7 @@ jobs:
       build_matrix: ${{ needs.generate-build-matrix.outputs.x86_64-build-matrix }}
       region: us-west-2
     secrets:
-      bucket_name: ${{ needs.github.event_name  == "pull_request" && secrets.AWS_TEST_BUCKET || secrets.AWS_S3_BUCKET }}
+      bucket_name: ${{ github.event_name == 'pull_request' && secrets.AWS_TEST_BUCKET || secrets.AWS_S3_BUCKET }}
       role_to_assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
 
   release-build-linux-arm-packages:
@@ -94,5 +94,5 @@ jobs:
       build_matrix: ${{ needs.generate-build-matrix.outputs.arm64-build-matrix }}
       region: us-west-2
     secrets:
-      bucket_name: ${{ needs.github.event_name  == "pull_request" && secrets.AWS_TEST_BUCKET || secrets.AWS_S3_BUCKET }}
+      bucket_name: ${{ github.event_name == 'pull_request' && secrets.AWS_TEST_BUCKET || secrets.AWS_S3_BUCKET }}
       role_to_assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
